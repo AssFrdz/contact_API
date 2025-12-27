@@ -1,0 +1,43 @@
+@api_contact = http://localhost:5167
+
+GET {{api_contact}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{api_contact}}/contact
+Accept: application/json
+
+
+###
+GET {{api_contact}}/contact/2
+Accept: application/json
+
+###
+POST {{api_contact}}/contact
+Content-Type: application/json
+{
+  "id":"6",
+  "Prenom"="Couci",
+  "nom="Zizou",
+  "Email="sisi@gmail.com",
+  "adresse"="1 allee de leojfe",
+  "tel""=025646463 
+}
+
+###
+PUT {{api_contact}}/contact/2
+Content-Type: application/json
+{
+  "id":"2",
+  "Prenom"="Couci",
+  "nom="Zizou",
+  "Email="sisi@gmail.com",
+  "adresse"="1 allee de leojfe",
+  "tel""=025646463 
+}
+
+###
+DELETE {{api_contact}}/contact/3
+
+
+
