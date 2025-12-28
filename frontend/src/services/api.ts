@@ -1,4 +1,4 @@
-export const API_URL = "https://localhost:7291/api";
+export const API_URL = "http://localhost:5167/api";
 
 export interface Contact {
   id: number;

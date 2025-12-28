@@ -15,7 +15,17 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ContactAPIContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddCors(options => { options.AddPolicy("AllowAll", policy => { policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); }); });
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+       policy.WithOrigins("http://localhost:5173") 
+       .AllowAnyHeader() 
+       .AllowAnyMethod(); 
+       });
+  
+});
+
 
 
 
@@ -30,7 +40,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowAll");
+app.UseCors("AllowFrontend");
 
 app.UseAuthorization();
 
